@@ -24,7 +24,7 @@ def lire_journal_nouvelles_lignes(service='pvedaemon'):
 regex_echec = re.compile(r'^(?P<date>\w+ \d+ \d+:\d+:\d+).*?authentication failure; rhost=(?P<ip>[\[\]\w\.:]+) user=(?P<user>[\w@.-]+)')
 
 # Regex 2 : Succès OpenID
-regex_succes = re.compile(r'^(?P<date>\w+ \d+ \d+:\d+:\d+).*?successful openid auth for user \'(?P<user>[\w@.-]+)\'')
+regex_succes = re.compile(r'^(?P<date>\w+ \d+ \d+:\d+:\d+).*?successful.*?for user \'(?P<user>[\w@.-]+)\'')
 
 def parser_ligne(ligne):
     match1 = regex_echec.match(ligne)
